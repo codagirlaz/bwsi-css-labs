@@ -61,6 +61,10 @@ def main():
     num2 = request_sanitized_number("Enter the second number: ")
     operation = input("Enter the operation (add, subtract, multiply, divide): ").strip().lower()
 
+    while operation not in ["add", "subtract", "multiply", "divide"]:
+        print("Invalid operation. Please choose from 'add', 'subtract', 'multiply', or 'divide'.")
+        operation = input("Enter the operation (add, subtract, multiply, divide): ").strip().lower()
+
     # Perform the calculation and display the result
     result = simple_calculator(operation, num1, num2)
     print(f"The result of {operation}ing {num1} and {num2} is: {result}")
